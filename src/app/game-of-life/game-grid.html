@@ -1,0 +1,9 @@
+<div class="game-grid">
+  <table>
+    <tr ng-repeat="row in $ctrl.data">
+      <td ng-repeat="cell in $ctrl.data[$index]"
+      ng-class="cell.isAlive ? 'alive-cell' : 'dead-cell'" ng-mouseover="cell.toggle()">
+      </td>
+    </tr>
+  </table>
+</div>

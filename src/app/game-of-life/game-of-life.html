@@ -1,0 +1,16 @@
+<div class="game-container">
+  <div class="game-grid-container">
+    <game-grid data="$ctrl.world"></game-grid>
+  </div>
+  <div class="game-controlls">
+    <select ng-options="name for name in $ctrl.patternNames" ng-model="$ctrl.selectedPatternName" ng-change="$ctrl.onPatternChange()"></select>
+    <span>
+      <label for="speed-input">Speed</label>
+      <input class="speed-input-ctrl" ng-model="$ctrl.tickSpeed" type="range" min="50" max="500" id="speed-input"
+      ng-change="$ctrl.onTickSpeedChange()">
+    </span>
+    <button class="start-button" ng-click="$ctrl.startTicks()" ng-disabled="$ctrl.gameRunning">Start</button>
+    <button class="stop-button" ng-click="$ctrl.stopTicks()" ng-disabled="!$ctrl.gameRunning">Stop</button>
+    <button class="reset-button" ng-click="$ctrl.resetGame()" ng-disabled="$ctrl.gameRunning">Reset</button>
+  </div>
+</div>
